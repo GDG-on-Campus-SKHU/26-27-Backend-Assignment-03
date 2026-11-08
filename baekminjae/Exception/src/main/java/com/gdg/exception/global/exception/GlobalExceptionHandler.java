@@ -63,7 +63,7 @@ public class GlobalExceptionHandler {
 
     // 존재하지 않는 요청 경로
     @ExceptionHandler(NoResourceFoundException.class)
-    public ResponseEntity<ErrorResponse> handleNoResourceFoundException(NoResourceFoundException e) {
+    public ResponseEntity<ErrorResponse> handleNoResourceFoundException() {
         ErrorCode errorCode = ErrorCode.URL_NOT_FOUND;
 
         return ResponseEntity
@@ -73,7 +73,7 @@ public class GlobalExceptionHandler {
 
     // 지원하지 않는 HTTP 요청 메서드
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-    public ResponseEntity<ErrorResponse> handleHttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e) {
+    public ResponseEntity<ErrorResponse> handleHttpRequestMethodNotSupportedException() {
         ErrorCode errorCode = ErrorCode.INVALID_REQUEST_METHOD;
 
         return ResponseEntity
@@ -83,7 +83,7 @@ public class GlobalExceptionHandler {
 
     // 요청 파라미터 타입 불일치
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
-    public ResponseEntity<ErrorResponse> handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException e) {
+    public ResponseEntity<ErrorResponse> handleMethodArgumentTypeMismatchException() {
         ErrorCode errorCode = ErrorCode.INVALID_PARAMETER_TYPE;
 
         return ResponseEntity
@@ -93,7 +93,7 @@ public class GlobalExceptionHandler {
 
     // 지원하지 않는 HTTP 요청 형식
     @ExceptionHandler(HttpMediaTypeNotSupportedException.class)
-    public ResponseEntity<ErrorResponse> handleHttpMediaTypeNotSupportedException(HttpMediaTypeNotSupportedException e) {
+    public ResponseEntity<ErrorResponse> handleHttpMediaTypeNotSupportedException() {
         ErrorCode errorCode = ErrorCode.UNSUPPORTED_MEDIA_TYPE;
 
         return ResponseEntity
