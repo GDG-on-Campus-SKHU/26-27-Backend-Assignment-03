@@ -13,9 +13,9 @@ public enum ErrorCode {
     INVALID_INPUT_VALUE("COMMON_002", HttpStatus.BAD_REQUEST, "입력값이 올바르지 않습니다."),
     INVALID_REQUEST_BODY("COMMON_003", HttpStatus.BAD_REQUEST, "요청 본문의 형식이 올바르지 않습니다."),
     NOT_FOUND_URL("COMMON_004", HttpStatus.NOT_FOUND, "존재하지 않는 URL입니다"),
-    WRONG_METHOD("COMMON_005", HttpStatus.METHOD_NOT_ALLOWED, "지원하지 않는 HTTP 메서드입니다."),
-    WRONG_TYPE("COMMON_006", HttpStatus.BAD_REQUEST, "요청값의 타입이 올바르지 않습니다."),
-    WRONG_CONTENT_TYPE("COMMON_007", HttpStatus.UNSUPPORTED_MEDIA_TYPE, "지원하지 않는 Content-Type입니다."),
+    METHOD_NOT_ALLOWED("COMMON_005", HttpStatus.METHOD_NOT_ALLOWED, "지원하지 않는 HTTP 메서드입니다."),
+    TYPE_MISMATCH("COMMON_006", HttpStatus.BAD_REQUEST, "요청값의 타입이 올바르지 않습니다."),
+    UNSUPPORTED_MEDIA_TYPE("COMMON_007", HttpStatus.UNSUPPORTED_MEDIA_TYPE, "지원하지 않는 Content-Type입니다."),
 
     // Member
     MEMBER_NOT_FOUND("MEMBER_001", HttpStatus.NOT_FOUND, "존재하지 않는 회원입니다."),

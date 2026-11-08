@@ -65,6 +65,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(NoResourceFoundException.class)
     public ResponseEntity<ErrorResponse> handleNoResourceFoundException(NoResourceFoundException e) {
         ErrorCode errorCode = ErrorCode.NOT_FOUND_URL;
+        log.warn("[NoResourceFoundException] message: {}", e.getMessage());
 
         return ResponseEntity
                 .status(errorCode.getStatus())
@@ -73,8 +74,9 @@ public class GlobalExceptionHandler {
 
     //지원하지 않는 HTTP 메서드
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-    public ResponseEntity<ErrorResponse> handleNoResourceFoundException(HttpRequestMethodNotSupportedException e) {
-        ErrorCode errorCode = ErrorCode.WRONG_METHOD;
+    public ResponseEntity<ErrorResponse> handleHttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e) {
+        ErrorCode errorCode = ErrorCode.METHOD_NOT_ALLOWED;
+        log.warn("[HttpRequestMethodNotSupportedException] message: {}", e.getMessage());
 
         return ResponseEntity
                 .status(errorCode.getStatus())
@@ -85,7 +87,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ErrorResponse> handleMethodArgumentTypeMismatchException(
             MethodArgumentTypeMismatchException e) {
-        ErrorCode errorCode = ErrorCode.WRONG_TYPE;
+        ErrorCode errorCode = ErrorCode.TYPE_MISMATCH;
+        log.warn("[MethodArgumentTypeMismatchException] message: {}", e.getMessage());
 
         return ResponseEntity
                 .status(errorCode.getStatus())
@@ -96,7 +99,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpMediaTypeNotSupportedException.class)
     public ResponseEntity<ErrorResponse> handleHttpMediaTypeNotSupportedException(
             HttpMediaTypeNotSupportedException e) {
-        ErrorCode errorCode = ErrorCode.WRONG_CONTENT_TYPE;
+        ErrorCode errorCode = ErrorCode.UNSUPPORTED_MEDIA_TYPE;
+        log.warn("[HttpMediaTypeNotSupportedException] message: {}", e.getMessage());
 
         return ResponseEntity
                 .status(errorCode.getStatus())
