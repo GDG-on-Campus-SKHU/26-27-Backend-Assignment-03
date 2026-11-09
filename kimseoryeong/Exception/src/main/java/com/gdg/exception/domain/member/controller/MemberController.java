@@ -44,13 +44,13 @@ public class MemberController {
 
     @PutMapping("/{memberId}")
     public ResponseEntity<MemberResDto> updateMember(@PathVariable Long memberId,
-                                                     @RequestBody MemberUpdateReqDto memberUpdateReqDto) {
+                                                     @Valid @RequestBody MemberUpdateReqDto memberUpdateReqDto) {
         return ResponseEntity.ok(memberService.updateMember(memberId, memberUpdateReqDto));
     }
 
     @PutMapping("/{memberId}/password")
     public ResponseEntity<Void> updatePassword(@PathVariable Long memberId,
-                                               @RequestBody MemberPasswordUpdateReqDto memberPasswordUpdateReqDto) {
+                                               @Valid @RequestBody MemberPasswordUpdateReqDto memberPasswordUpdateReqDto) {
         memberService.updatePassword(memberId, memberPasswordUpdateReqDto);
         return ResponseEntity.noContent().build();
     }

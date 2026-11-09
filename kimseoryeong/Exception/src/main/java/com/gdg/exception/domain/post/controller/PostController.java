@@ -43,7 +43,7 @@ public class PostController {
 
     @PutMapping("/{postId}")
     public ResponseEntity<PostResDto> updatePost(@PathVariable Long postId,
-                                                 @RequestBody PostUpdateReqDto postUpdateReqDto) {
+                                                 @Valid @RequestBody PostUpdateReqDto postUpdateReqDto) {
         return ResponseEntity.ok(postService.updatePost(postId, postUpdateReqDto));
     }
 
