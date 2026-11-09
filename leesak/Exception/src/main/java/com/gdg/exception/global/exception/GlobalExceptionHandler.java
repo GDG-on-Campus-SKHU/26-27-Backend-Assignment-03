@@ -41,7 +41,7 @@ public class GlobalExceptionHandler {
     // MethodArgumentTypeMismatchException
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ErrorResponse> handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException e) {
-        ErrorCode errorCode = ErrorCode.INVALID_TYPE;
+        ErrorCode errorCode = ErrorCode.INVALID_ARGUMENT_TYPE;
 
         return ResponseEntity
                 .status(errorCode.getStatus())

@@ -14,7 +14,7 @@ public enum ErrorCode {
     INVALID_REQUEST_BODY("COMMON_003", HttpStatus.BAD_REQUEST, "요청 본문의 형식이 올바르지 않습니다."),
     URL_NOT_FOUND("COMMON_004", HttpStatus.NOT_FOUND, "존재하지 않는 경로입니다."),
     METHOD_NOT_ALLOWED("COMMON_005", HttpStatus.METHOD_NOT_ALLOWED, "지원하지 않는 HTTP메서드입니다."),
-    INVALID_TYPE("COMMON_006", HttpStatus.BAD_REQUEST, "요청한 값의 자료형이 올바르지 않습니다."),
+    INVALID_ARGUMENT_TYPE("COMMON_006", HttpStatus.BAD_REQUEST, "요청한 값의 자료형이 올바르지 않습니다."),
     UNSUPPORTED_MEDIA_TYPE("COMMON_007", HttpStatus.UNSUPPORTED_MEDIA_TYPE, "지원하지 않는 요청 데이터 형식입니다."),
 
     // Member
